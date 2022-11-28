@@ -49,12 +49,16 @@ public class Order {
 	@ManyToOne
 	private Customer customer;
 	
-	@ElementCollection(fetch = FetchType.EAGER)
-	@CollectionTable(name="Order_table_Product",joinColumns = @JoinColumn(name="Order_table_Id"))
-	@Column(name="Quantity")
-	@MapKeyJoinColumn(name="Product_Id",referencedColumnName = "seller_ProductId")
+//	@ElementCollection(fetch = FetchType.EAGER)
+//	@CollectionTable(name="Order_table_Product",joinColumns = @JoinColumn(name="Order_table_Id"))
+//	@Column(name="Quantity")
+//	@MapKeyJoinColumn(name="Product_Id",referencedColumnName = "seller_ProductId")
+//	@JsonIgnore
+//	private Map<Products, Integer> products;
+	
+	@OneToMany(cascade = CascadeType.ALL)
 	@JsonIgnore
-	private Map<Products, Integer> products;
+	private List<ProductDTO> productList;
 	
 	@OneToOne
 	@JsonIgnore
