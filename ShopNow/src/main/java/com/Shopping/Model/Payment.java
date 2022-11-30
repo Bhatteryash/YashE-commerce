@@ -1,5 +1,8 @@
 package com.Shopping.Model;
 
+import java.time.LocalDate;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,16 +25,18 @@ public class Payment {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer paymentId;
 	
-	private String paymentStatus;
+	private boolean paymentStatus;
 	
 	private Integer paymentAmount;
+	
+	private LocalDate localDate;
 	
 	@JsonIgnore
 	@OneToOne
 	private CardDetails card;
 	
 	@JsonIgnore
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Order order;
 	
 }

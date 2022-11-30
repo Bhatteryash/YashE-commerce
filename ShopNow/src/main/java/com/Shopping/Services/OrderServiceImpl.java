@@ -148,7 +148,8 @@ public class OrderServiceImpl implements OrderService {
 			return "Order Cancelled Sucessfully... \nPlease Provide FeedBack On want went Wrong 😔";
 
 		} else {
-			order.getPayment().setPaymentStatus("Payment Cancelled...");
+			
+			order.getPayment().setPaymentStatus(false);
 			order.setOrderStatus("Order Cancelled");
 			orepo.save(order);
 			return "Order Cancelled Sucessfully... \nYour Amount will be refunded within 4 to five working days "
