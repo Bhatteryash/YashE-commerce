@@ -18,11 +18,13 @@ import com.Shopping.Exceptions.OrderException;
 import com.Shopping.Model.Cart;
 import com.Shopping.Model.CurrentUserSession;
 import com.Shopping.Model.Customer;
+import com.Shopping.Model.Feedback;
 import com.Shopping.Model.Order;
 import com.Shopping.Model.ProductDTO;
 import com.Shopping.Model.Products;
 import com.Shopping.Repository.CurrentUserSessionRepo;
 import com.Shopping.Repository.CustomerRepo;
+import com.Shopping.Repository.FeedBackRepo;
 import com.Shopping.Repository.OrderRepo;
 import com.Shopping.Repository.ProductDTORepo;
 
@@ -40,6 +42,9 @@ public class OrderServiceImpl implements OrderService {
 
 	@Autowired
 	private ProductDTORepo pdRepo;
+	
+	@Autowired
+	private FeedBackRepo frepo;
 
 	@Override
 	public Order placeOrder(Integer customerId, String key)
@@ -170,10 +175,10 @@ public class OrderServiceImpl implements OrderService {
 			throw new OrderException("Invalid OrderId");
 
 		Order order = opt.get();
-
+		
 		if (order.getCustomer().getCustomerId() != customerId)
 			throw new OrderException("Order Not present In Customer...");
-
+		deletefeedback(order);
 		if(order.getPayment()==null) {
 			
 			orepo.delete(order);
@@ -208,4 +213,14 @@ public class OrderServiceImpl implements OrderService {
 
 	}
 
+	
+	public void deletefeedback(Order order) {
+		List<Feedback> list = frepo.findByOrder(order);
+		
+		for(Feedback f:list) {
+			frepo.delete(f);
+		}
+		
+	}
+	
 }

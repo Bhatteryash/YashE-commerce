@@ -2,6 +2,7 @@ package com.Shopping.Services;
 
 import java.lang.StackWalker.Option;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,13 @@ import com.Shopping.Model.Address;
 import com.Shopping.Model.Cart;
 import com.Shopping.Model.CurrentUserSession;
 import com.Shopping.Model.Customer;
+import com.Shopping.Model.Feedback;
+import com.Shopping.Model.Order;
 import com.Shopping.Model.Products;
 import com.Shopping.Repository.AddressRepo;
 import com.Shopping.Repository.CurrentUserSessionRepo;
 import com.Shopping.Repository.CustomerRepo;
+import com.Shopping.Repository.FeedBackRepo;
 
 @Service
 public class customerServiceimpl implements customerService{
@@ -29,6 +33,9 @@ public class customerServiceimpl implements customerService{
 	
 	@Autowired
 	private CurrentUserSessionRepo cusr;
+	
+	@Autowired
+	private FeedBackRepo frepo;
 	
 	@Override
 	public Customer AddCustomer(Customer customer) throws CustomerException {
@@ -74,6 +81,8 @@ public class customerServiceimpl implements customerService{
 		  
 		 Customer cust = crepo.findById(customerId).get();
 		 
+		 deletefeedback(cust);
+		 
 		crepo.delete(cust);
 		
 		cusr.delete(cus);
@@ -108,5 +117,15 @@ public class customerServiceimpl implements customerService{
 		 }
 	}
 
+	public void deletefeedback(Customer cust) {
+		List<Feedback> list = frepo.findByCustomer(cust);
+		
+		for(Feedback f:list) {
+			frepo.delete(f);
+		}
+		
+	}
+	
+	
 	
 }

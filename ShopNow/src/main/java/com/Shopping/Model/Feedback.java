@@ -51,7 +51,7 @@ public class Feedback {
 	@JsonIgnore
 	private Customer customer;
 	
-	@OneToOne(cascade = CascadeType.REMOVE)
+	@OneToOne
 	@JsonIgnore
 	private Order order;
 }
