@@ -24,7 +24,7 @@ public class MySalesController {
 	private MySalesServices mss;
 
 	@GetMapping("/getSalesForToday")
-	public ResponseEntity<List<Order>> SalesForToday(@RequestParam Integer AdminId,@RequestParam String key)
+	public ResponseEntity<List<Order>> SalesForTodayHandler(@RequestParam Integer AdminId,@RequestParam String key)
 			throws AdminException, LoginException, OrderException {
 
 		List<Order> list = mss.SalesForToday(AdminId, key);
@@ -33,7 +33,7 @@ public class MySalesController {
 	}
 
 	@GetMapping("/getSalesForWeek")
-	public ResponseEntity<List<Order>> SalesForWeek(@RequestParam Integer AdminId,@RequestParam String key)
+	public ResponseEntity<List<Order>> SalesForWeekHandler(@RequestParam Integer AdminId,@RequestParam String key)
 			throws AdminException, LoginException, OrderException {
 		List<Order> list = mss.SalesForWeek(AdminId, key);
 
@@ -41,7 +41,7 @@ public class MySalesController {
 	}
 
 	@GetMapping("/getSalesForMonth")
-	public ResponseEntity<List<Order>> SalesForMonth(@RequestParam Integer AdminId,@RequestParam String key)
+	public ResponseEntity<List<Order>> SalesForMonthHandler(@RequestParam Integer AdminId,@RequestParam String key)
 			throws AdminException, LoginException, OrderException {
 		List<Order> list = mss.SalesForMonth(AdminId, key);
 
@@ -49,7 +49,7 @@ public class MySalesController {
 	}
 
 	@GetMapping("/getSalesForYear")
-	public ResponseEntity<List<Order>> SalesForYear(@RequestParam Integer AdminId,@RequestParam String key)
+	public ResponseEntity<List<Order>> SalesForYearHandler(@RequestParam Integer AdminId,@RequestParam String key)
 			throws AdminException, LoginException, OrderException {
 		List<Order> list = mss.SalesForYear(AdminId, key);
 
@@ -57,7 +57,7 @@ public class MySalesController {
 	}
 
 	@GetMapping("/getSalesBetweenDates")
-	public ResponseEntity<List<Order>> SalesBetweenDates(@RequestParam String date1,@RequestParam String date2,@RequestParam Integer AdminId,@RequestParam String key)
+	public ResponseEntity<List<Order>> SalesBetweenDatesHandler(@RequestParam String date1,@RequestParam String date2,@RequestParam Integer AdminId,@RequestParam String key)
 			throws AdminException, LoginException, OrderException {
 		
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");

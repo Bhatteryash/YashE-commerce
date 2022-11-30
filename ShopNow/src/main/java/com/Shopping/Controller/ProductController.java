@@ -2,6 +2,8 @@ package com.Shopping.Controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +28,7 @@ public class ProductController {
 	private ProductService spService;
 	
 	@PostMapping("/AddProduct")
-	public ResponseEntity<Products> AddSellerProductHandler(@RequestBody Products sProduct,@RequestParam String key,@RequestParam Integer sellerId ) 
+	public ResponseEntity<Products> AddSellerProductHandler(@Valid @RequestBody Products sProduct,@RequestParam String key,@RequestParam Integer sellerId ) 
 			throws LoginException, SellerException{
 		
 		Products savedProduct= spService.AddProduct(sProduct, key, sellerId);
@@ -63,7 +65,7 @@ public class ProductController {
 	}
 	
 	@DeleteMapping("/deleteProduct")
-	public ResponseEntity<String> removeSellerProduct(@RequestParam Integer sproductId,@RequestParam String key,@RequestParam Integer sellerId)
+	public ResponseEntity<String> removeSellerProductHandler(@RequestParam Integer sproductId,@RequestParam String key,@RequestParam Integer sellerId)
 			throws LoginException, SellerException, ProductException{
 		
 		String message= spService.removeSellerProduct(sproductId, key, sellerId);

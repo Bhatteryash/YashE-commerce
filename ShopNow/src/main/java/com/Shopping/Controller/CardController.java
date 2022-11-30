@@ -2,6 +2,8 @@ package com.Shopping.Controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +27,7 @@ public class CardController {
 	private CardServices cService;
 	
 	@PostMapping("/AddCard")
-	public ResponseEntity<CardDetails> AddCardHandler(@RequestBody CardDetails card,@RequestParam String key,@RequestParam Integer customerId)
+	public ResponseEntity<CardDetails> AddCardHandler(@Valid @RequestBody CardDetails card,@RequestParam String key,@RequestParam Integer customerId)
 			throws CardException, LoginException, CustomerException{
 		
 		CardDetails savedCard = cService.addcard(card, key, customerId);

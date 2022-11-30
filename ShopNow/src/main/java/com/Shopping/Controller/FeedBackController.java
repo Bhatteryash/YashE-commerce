@@ -2,6 +2,8 @@ package com.Shopping.Controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +30,7 @@ public class FeedBackController {
 	private FeedBackService fServices;
 	
 	@PostMapping("addFeedBack")
-	public ResponseEntity<Feedback> addFeedBackHandler(@RequestBody Feedback feedback,@RequestParam Integer orderId,@RequestParam Integer customerId,@RequestParam String key)
+	public ResponseEntity<Feedback> addFeedBackHandler(@Valid @RequestBody Feedback feedback,@RequestParam Integer orderId,@RequestParam Integer customerId,@RequestParam String key)
 			throws LoginException,CustomerException,OrderException,FeedBackException{
 		
 		Feedback feed = fServices.AddFeedBack(feedback, orderId, customerId, key);

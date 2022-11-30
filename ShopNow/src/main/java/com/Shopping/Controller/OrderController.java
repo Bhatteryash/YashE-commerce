@@ -28,7 +28,7 @@ public class OrderController {
 	
 	
 	@PutMapping("/placeOrder/{customerId}/{key}")
-	public ResponseEntity<Order> placeOrder(@PathVariable Integer customerId,@PathVariable String key) 
+	public ResponseEntity<Order> placeOrderHandler(@PathVariable Integer customerId,@PathVariable String key) 
 			throws LoginException, CustomerException, OrderException, CartException, AddressException{
 		
 		Order placedOrder= oService.placeOrder(customerId, key);

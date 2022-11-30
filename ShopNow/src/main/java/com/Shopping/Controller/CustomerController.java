@@ -1,5 +1,7 @@
 package com.Shopping.Controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +26,7 @@ public class CustomerController {
 	
 	
 	@PostMapping("/addCustomer")
-	public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) throws CustomerException{
+	public ResponseEntity<Customer> addCustomerHandler(@Valid @RequestBody Customer customer) throws CustomerException{
 		
 		Customer newCustomer = cService.AddCustomer(customer);
 		
@@ -32,7 +34,7 @@ public class CustomerController {
 	}
 	
 	@PutMapping("/UpdateCustomer")
-	public ResponseEntity<Customer> updateCustomer(@RequestParam String key,@RequestBody  Customer customer) throws CustomerException, LoginException{
+	public ResponseEntity<Customer> updateCustomerHandler(@RequestParam String key,@RequestBody  Customer customer) throws CustomerException, LoginException{
 		
 		Customer updatedcustomer= cService.updateCustomer(key, customer);
 		
@@ -41,7 +43,7 @@ public class CustomerController {
 	}
 	
 	@PutMapping("/AddAddress")
-	public ResponseEntity<Address> addAddress(@RequestBody Address address,String key,Integer customerId) throws CustomerException, LoginException{
+	public ResponseEntity<Address> addAddressHandler(@RequestBody Address address,String key,Integer customerId) throws CustomerException, LoginException{
 		
 		Address addr= cService.AddAddress(address, key, customerId);
 		
@@ -50,7 +52,7 @@ public class CustomerController {
 	
 	
 	@DeleteMapping("/deleteCustomer")
-	public ResponseEntity<String> deleteCustomer(Integer customerId ,String key) throws CustomerException, LoginException{
+	public ResponseEntity<String> deleteCustomerHandler(Integer customerId ,String key) throws CustomerException, LoginException{
 		
 		String message= cService.deleteCustomer(customerId, key);
 		

@@ -53,7 +53,7 @@ public class PaymentController {
 	}
 	
 	
-	public ResponseEntity<String> cancelPayment(@PathVariable Integer paymentId,@RequestParam Integer customerId,@RequestParam String key)
+	public ResponseEntity<String> cancelPaymentHandler(@PathVariable Integer paymentId,@RequestParam Integer customerId,@RequestParam String key)
 			throws LoginException, CustomerException, OrderException, PaymentException {
 		
 		String message = pservice.cancelPayment(paymentId, customerId, key);

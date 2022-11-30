@@ -24,7 +24,7 @@ public class SellerController {
 	private  SellerService sService;
 	
 	@PostMapping("/AddSeller")
-	public ResponseEntity<Seller> AddSeller(@Valid @RequestBody Seller seller) throws SellerException{
+	public ResponseEntity<Seller> AddSellerHandler(@Valid @RequestBody Seller seller) throws SellerException{
 		
 		Seller resultSeller= sService.insertSeller(seller);
 		
@@ -32,7 +32,7 @@ public class SellerController {
 	}
 	
 	@PutMapping("/updateName")
-	public ResponseEntity<Seller> updateName(@RequestParam Integer sellerId,@RequestParam String key,@RequestParam String SellerName) throws SellerException, LoginException{
+	public ResponseEntity<Seller> updateNameHandler(@RequestParam Integer sellerId,@RequestParam String key,@RequestParam String SellerName) throws SellerException, LoginException{
 		
 		Seller sell= sService.updateName(sellerId, key, SellerName);
 		
@@ -40,7 +40,7 @@ public class SellerController {
 	}
 	
 	@DeleteMapping("/deleteSeller")
-	public ResponseEntity<String> deleteSeller(@RequestParam Integer sellerId,@RequestParam String key) throws SellerException, LoginException{
+	public ResponseEntity<String> deleteSellerHandler(@RequestParam Integer sellerId,@RequestParam String key) throws SellerException, LoginException{
 		String message= sService.deleteSeller(sellerId, key);
 		
 		return new ResponseEntity<String>(message,HttpStatus.ACCEPTED);

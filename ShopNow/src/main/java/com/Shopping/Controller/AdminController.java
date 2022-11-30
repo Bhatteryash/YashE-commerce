@@ -1,5 +1,7 @@
 package com.Shopping.Controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +25,7 @@ public class AdminController {
 	private AdminServices aservice;
 	
 	@PostMapping("/addAdmin")
-	public ResponseEntity<Admin> addAdmin(@RequestBody Admin admin) throws AdminException{
+	public ResponseEntity<Admin> addAdminHandler(@Valid @RequestBody Admin admin) throws AdminException{
 		
 		Admin savedAdmin = aservice.addadmin(admin);
 		
@@ -31,7 +33,7 @@ public class AdminController {
 	}
 	
 	@PutMapping("/updateAdmin")
-	public ResponseEntity<Admin> updateAdmin(@RequestBody Admin admin,@RequestParam String key) throws AdminException,LoginException{
+	public ResponseEntity<Admin> updateAdminHandler(@RequestBody Admin admin,@RequestParam String key) throws AdminException,LoginException{
 		
 		Admin savedAdmin = aservice.updateAdmin(admin, key);
 		
@@ -39,7 +41,7 @@ public class AdminController {
 	}
 	
 	@DeleteMapping("/deleteAdmin")
-	public ResponseEntity<String> deleteAdmin(@RequestParam Integer adminId,@RequestParam String key) throws AdminException,LoginException{
+	public ResponseEntity<String> deleteAdminHandler(@RequestParam Integer adminId,@RequestParam String key) throws AdminException,LoginException{
 		
 		String message = aservice.deleteAdmin(adminId, key);
 		
@@ -47,7 +49,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/getAdmin")
-	public ResponseEntity<Admin> getAdminById(@RequestParam Integer adminId,@RequestParam String key) throws AdminException,LoginException{
+	public ResponseEntity<Admin> getAdminByIdHandler(@RequestParam Integer adminId,@RequestParam String key) throws AdminException,LoginException{
 		
 		Admin savedAdmin = aservice.getAdminById(adminId, key);
 		
