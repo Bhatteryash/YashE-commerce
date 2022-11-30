@@ -38,6 +38,15 @@ public class LoginController {
 		
 	}
 	
+	@PostMapping("/adminLogin")
+	public ResponseEntity<CurrentUserSession> adminLogin(@RequestBody Login login) throws LoginException{
+		
+		CurrentUserSession cus= lservices.adminlogin(login);
+		
+		return new ResponseEntity<CurrentUserSession>(cus,HttpStatus.ACCEPTED);
+		
+	}
+	
 	@DeleteMapping("/Logout")
 	public ResponseEntity<String> Logout(@RequestParam Integer id,@RequestParam String key) throws LoginException{
 		

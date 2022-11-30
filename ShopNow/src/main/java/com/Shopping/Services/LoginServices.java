@@ -11,4 +11,6 @@ public interface LoginServices {
 	public CurrentUserSession sellerlogin(Login log) throws LoginException;
 
 	public String Logout(Integer id , String uuid) throws LoginException;
+	
+	public CurrentUserSession adminlogin(Login log) throws LoginException;
 }

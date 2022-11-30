@@ -8,5 +8,5 @@ import com.Shopping.Model.Admin;
 @Repository
 public interface AdminRepo extends JpaRepository<Admin, Integer>{
 
-	
+	public Admin findByUserName(String userName);
 }

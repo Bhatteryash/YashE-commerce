@@ -91,7 +91,7 @@ public class MySalesServiceImpl implements MySalesServices{
 	public Admin checkLogin(String key, Integer AdminId) throws LoginException, AdminException {
 		Optional<Admin> opt = arepo.findById(AdminId);
 		if (opt.isEmpty())
-			throw new AdminException("No customer Found with id:- " + AdminId);
+			throw new AdminException("No Admin Found with id:- " + AdminId);
 
 		Admin admin = opt.get();
 		CurrentUserSession cus = cusRepo.findByUuid(key);
