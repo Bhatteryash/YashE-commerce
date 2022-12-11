@@ -14,44 +14,48 @@
 
 # Customer Controller
 
-<img src="./controllers/customer.png" />
+<img src="./controllers/YashE-commerce.png" />
+
+# Customer Controller
+
+<img src="./controllers/customer.PNG" />
 
 # Admin Controller
 
-<img src="./controllers/admin.png" />
+<img src="./controllers/admin.PNG" />
 
 # Seller Controller
 
-<img src="./controllers/seller.png" />
+<img src="./controllers/seller.PNG" />
 
 # Product Controller
 
-<img src="./controllers/product.png" />
+<img src="./controllers/product.PNG" />
 
 # Cart Controller
 
-<img src="./controllers/cart.png" />
+<img src="./controllers/cart.PNG" />
 
 # Order Controller
 
-<img src="./controllers/order.png" />
+<img src="./controllers/order.PNG" />
 
 # Payment Controller
 
-<img src="./controllers/payment.png" />
+<img src="./controllers/payment.PNG" />
 
 # Feedback Controller
 
-<img src="./controllers/feedback.png" />
+<img src="./controllers/feedback.PNG" />
 
 # Sales Controller
 
-<img src="./controllers/sales.png" />
+<img src="./controllers/sales.PNG" />
 
 # Card Controller
 
-<img src="./controllers/card.png" />
+<img src="./controllers/card.PNG" />
 
 # Login controller
 
-<img src="./controllers/login.png" />
+<img src="./controllers/login.PNG" />
