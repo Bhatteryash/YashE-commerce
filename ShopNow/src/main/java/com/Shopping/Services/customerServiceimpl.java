@@ -67,6 +67,11 @@ public class customerServiceimpl implements customerService{
 		if(cus==null) throw new LoginException("Please Login First");
 		
 		Customer cust= opt.get();
+//		cusr.delete(cus);
+		customer.setCard(cust.getCard());
+		customer.setAddress(cust.getAddress());
+		customer.setOrderList(cust.getOrderList());
+		customer.setCart(cust.getCart());
 		
 		crepo.save(customer);
 		return cust;
