@@ -14,4 +14,4 @@
 
 # Project Schema Plan
 
-<img src="controllers/YashE-commerce.png" />
+<img src="[./blob/controllers/admin.PNG](https://github.com/Bhatteryash/YashE-commerce/blob/main/controllers/YashE-commerce.png)" />
