@@ -12,6 +12,46 @@
 <h1>Deployed Video Link</h1>
 <ul><li><a target="_blank" href="https://drive.google.com/file/d/17o2alq8DNX1q7yQvpWKVQwQ5uvEYu7OQ/view?usp=sharing">Live Project Video Link</a></li></ul>
 
-# Project Schema Plan
+# Customer Controller
 
-<img src="./controllers/YashE-commerce.png" />
+<img src="./controllers/customer.png" />
+
+# Admin Controller
+
+<img src="./controllers/admin.png" />
+
+# Seller Controller
+
+<img src="./controllers/seller.png" />
+
+# Product Controller
+
+<img src="./controllers/product.png" />
+
+# Cart Controller
+
+<img src="./controllers/cart.png" />
+
+# Order Controller
+
+<img src="./controllers/order.png" />
+
+# Payment Controller
+
+<img src="./controllers/payment.png" />
+
+# Feedback Controller
+
+<img src="./controllers/feedback.png" />
+
+# Sales Controller
+
+<img src="./controllers/sales.png" />
+
+# Card Controller
+
+<img src="./controllers/card.png" />
+
+# Login controller
+
+<img src="./controllers/login.png" />
