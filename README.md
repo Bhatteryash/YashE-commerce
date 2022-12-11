@@ -1,6 +1,20 @@
 <h1 align="center">YashE-Commerce</h1>
 <h2 align="center">A Backend project providing Rest Api for online shopping application. The Api can perform all the crud operation with customer validation on every step.</h2>
 <br>
+
+
+<h2 align="left">Tech-stack</h2>
+<h4 align="left">
+
+| Techstack|Purpose |
+| ------|------ |
+| Spring Boot | Build Java based Spring Application |
+| MySQL |Relational Database System |
+| Swagger|Simplify API Creation |
+| Lombok|Annotation based getter, setter, equals, constructor |
+
+<br>
+
 <h1>Modules</h1>
 <ul>
 <li><h3>Login Module</h3></li>
@@ -59,3 +73,12 @@
 # Login controller
 
 <img src="./controllers/login.PNG" />
+  
+  ## Authors
+
+| Contributors|Responsibility |
+| ------|------ |
+| Yash Bhatter | [@Bhatteryash](https://github.com/Bhatteryash) |
+
+  
+  
