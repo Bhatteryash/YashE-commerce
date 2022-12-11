@@ -14,4 +14,4 @@
 
 # Project Schema Plan
 
-<img src="./controllers/admin.PNG" />
+<img src="./controllers/YashE-commerce.png" />
