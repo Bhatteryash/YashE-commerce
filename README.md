@@ -14,4 +14,4 @@
 
 # Project Schema Plan
 
-<img src="STSKart.png" />
+<img src="controllers/YashE-commerce.png" />
